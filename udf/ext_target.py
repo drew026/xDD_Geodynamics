@@ -49,7 +49,7 @@ with open('./var/target_variables.txt') as fid:
     target_variables = fid.readlines()
 
 for i in target_variables:
-    exec i
+    exec(i)
 
 #loop through all sentences.
 to_write = []

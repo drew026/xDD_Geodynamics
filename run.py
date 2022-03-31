@@ -8,17 +8,17 @@ import os, time, subprocess, yaml
 start_time = time.time()
 
 #load configuration file
-with open('./config', 'r') as config_yaml:
-    config = yaml.load(config_yaml)
+#with open('./config', 'r') as config_yaml:
+#    config = yaml.load(config_yaml)
 
 #load credentials file
-with open('./credentials', 'r') as credential_yaml:
-    credentials = yaml.load(credential_yaml)
+#with open('./credentials', 'r') as credential_yaml:
+#    credentials = yaml.load(credential_yaml)
 
 #INITALIZE THE POSTGRES TABLES
-print('Step 1: Initialize the PSQL tables ...')
-subprocess.call('./setup/setup.sh', shell=True)
-os.system('python ./udf/initdb.py')
+#print('Step 1: Initialize the PSQL tables ...')
+#subprocess.call('./setup/setup.sh', shell=True)
+#os.system('python ./udf/initdb.py')
 
 #BUILD THE BIBLIOGRAPHY
 print('Step 2: Build the bibliography ...')
@@ -55,12 +55,12 @@ print('Step 9: Delineate reference section from main body extractions ...')
 os.system('python ./udf/ext_references.py')
 
 #BUILD A BEST RESULTS TABLE OF STROM-STRAT_NAME TUPLES
-print('Step 10: Build a best results table of strom-strat_name tuples ...')
-os.system('python ./udf/ext_results.py')
+#print('Step 10: Build a best results table of strom-strat_name tuples ...')
+#os.system('python ./udf/ext_results.py')
 
 #FIND ADJECTIVES DESCRIBING STROM
-print('Step 11: Find adjectives describing strom target words ...')
-os.system('python ./udf/ext_target_adjective.py')
+#print('Step 11: Find adjectives describing strom target words ...')
+#os.system('python ./udf/ext_target_adjective.py')
 
 
 #summary of performance time
